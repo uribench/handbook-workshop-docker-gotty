@@ -3,7 +3,7 @@
 The included Dockerfile is dedicated to the workshop on the Software Engineering Handbook.
 
 This Dockerfile prepares an Alpine Linux deployment that includes [GoTTY][1], Python3, Pip, git, 
-handbook-tools package, and a clone of the handbook-workshop GitHUb repository.
+handbook-tools package, and a clone of the handbook-workshop GitHub repository.
 
 It can be deployed in various ways. The following sections show two deploying examples:
 
