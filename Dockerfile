@@ -20,6 +20,8 @@ COPY app $WORKDIR
 
 RUN pip install handbook-tools
 
+RUN git clone https://github.com/uribench/handbook-workshop.git
+
 ENTRYPOINT ["gotty"]
 CMD ["--permit-write", "--reconnect", "bash"]
 
