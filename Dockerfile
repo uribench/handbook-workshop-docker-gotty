@@ -15,13 +15,11 @@ RUN wget $GOTTY_BINARY -O gotty.tar.gz && \
     rm gotty.tar.gz && \
     chmod +x /usr/local/bin/gotty
 
-# RUN mkdir /root/.ssh
-# COPY files/home/* /root/
-ADD files/home /root/
-RUN chmod 600 ~/.ssh/id_rsa
-COPY app $WORKDIR
-
 RUN pip install handbook-tools
+
+COPY app .
+COPY files/home/ /root/
+RUN chmod 600 ~/.ssh/id_rsa
 
 RUN git clone https://github.com/uribench/handbook-workshop.git
 
