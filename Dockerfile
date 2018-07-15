@@ -21,8 +21,6 @@ COPY app .
 COPY files/home/ /root/
 RUN chmod 600 ~/.ssh/id_rsa
 
-RUN git clone https://github.com/uribench/handbook-workshop.git
-
 ENTRYPOINT ["gotty"]
 CMD ["--permit-write", "--reconnect", "bash"]
 
