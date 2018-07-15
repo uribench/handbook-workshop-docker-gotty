@@ -4,7 +4,7 @@ WORKDIR /app
 
 ENV PS1 "\n\n> \W \$ "
 ENV TERM=linux
-ENV PACKAGES bash git
+ENV PACKAGES bash git openssh
 
 RUN apk --no-cache add $PACKAGES
 
@@ -15,7 +15,10 @@ RUN wget $GOTTY_BINARY -O gotty.tar.gz && \
     rm gotty.tar.gz && \
     chmod +x /usr/local/bin/gotty
 
-COPY files/home/* /root/
+# RUN mkdir /root/.ssh
+# COPY files/home/* /root/
+ADD files/home /root/
+RUN chmod 600 ~/.ssh/id_rsa
 COPY app $WORKDIR
 
 RUN pip install handbook-tools
