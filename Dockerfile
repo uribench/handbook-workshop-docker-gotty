@@ -4,7 +4,7 @@ WORKDIR /app
 
 ENV PS1 "\n\n> \W \$ "
 ENV TERM=linux
-ENV PACKAGES bash git openssh
+ENV PACKAGES bash git openssh nano
 
 RUN apk --no-cache add $PACKAGES
 
@@ -20,7 +20,6 @@ RUN pip install handbook-tools
 COPY app .
 COPY files/home/ /root/
 RUN chmod 600 ~/.ssh/id_rsa
-RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 
 ENTRYPOINT ["gotty"]
 CMD ["--permit-write", "--reconnect", "bash"]
