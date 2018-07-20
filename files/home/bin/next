@@ -1,0 +1,447 @@
+#!/usr/bin/env bash
+source /root/dialog.sh
+
+step=0
+clear
+
+[[ -f "$STEPFILE" ]] && step=$(<$STEPFILE)
+
+case $step in
+  0 ) 
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Welcome to the Handbook Workshop."
+    message "You have three options for performing the hands-on session:"
+    message "  1. Use a guided session with the 'next'/'prev' commands."
+    message "  2. Continue using the instructions in the Exercises."
+    message "  3. Combine the above two options."
+    separator
+    message "With the guided session, perform the given instructions, and then:"
+    message "Type 'next' to continue." true
+    message "You can always type 'prev' to go back."
+    separator
+    message "When ready to start type 'next'."
+    end_dialog
+    ;;
+  1 ) 
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 1 - Step 1" 
+    message "Visit the Cloud based deployment of Linux."
+    separator
+    message "If you are here, you have done that already."
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  2 ) 
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 1 - Step 2" 
+    message "Enter the Passphrase of the private SSH key."
+    separator
+    message "If skipped earlier, enter the following command, otherwise ignore it:"
+    message "ssh-add" true
+    message "and follow the instructions."
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  3 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 1 - Step 3" 
+    message "Create a Personal Working Directory."
+    separator
+    message "Enter the following commands:"
+    message "mkdir <unique-directory-name>" true
+    message "cd <unique-directory-name>" true
+    separator
+    message "Replace the <unique-directory-name> with your name, for instance."
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  4 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 1 - Step 4" 
+    message "Select a Text Editor."
+    separator
+    message "Enter one of the following two commands:"
+    message "nano test.md" true
+    message "or"
+    message "vi test.md" true
+    separator
+    message "Experiment with simple editing tasks, save the file, and exit the editor."
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  5 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 1 - Step 5" 
+    message "Experiment with an In-browser Markdown Editor."
+    separator
+    message "Use Chrome to visit the following URL:"
+    message "https://stackedit.io/" true
+    separator
+    message "Edit some Markdown content in StackEdit, when ready:"
+    message "Copy the content from StackEdit into test.md using your preferred editor."
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  6 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Well done!!! You have completed Exercise 1." 
+    message "When you are ready to start the next exercise type 'next'."
+    end_dialog
+    ;;
+  7 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 2 - Step 1" 
+    message "Verify Prerequisites."
+    separator
+    message "Enter the following command:"
+    message "pwd" true
+    separator
+    message "The working directory should be what you chose for <unique-directory-name>."
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  8 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 2 - Step 2" 
+    message "Visit the handbook-workshop Repository on GitHub."
+    separator
+    message "Use Chrome to visit the following URL:"
+    message "https://github.com/uribench/handbook-workshop" true
+    separator
+    message "Use the following credentials:"
+    message "  Username: handbookworkshop"
+    message "  Password: (will be provided in the workshop)"
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  9 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 2 - Step 3" 
+    message "Copy the GitHub Link for Cloning."
+    separator
+    message "Go to the handbook-workshop Repository on GitHub."
+    message "Click on the 'Clone or download' button on the right side of the page."
+    message "Copy the GitHub link for cloning the repository using SSH protocol."
+    separator
+    message "It should be: git@github.com:uribench/handbook-workshop.git"
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  10 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 2 - Step 4" 
+    message "Clone the handbook-workshop Repository."
+    separator
+    message "Enter the following command:"
+    message "git clone git@github.com:uribench/handbook-workshop.git" true
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  11 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 2 - Step 5" 
+    message "Enter the Directory of the Cloned Repository."
+    separator
+    message "Enter the following command:"
+    message "cd handbook-workshop" true
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  12 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 2 - Step 6" 
+    message "Create a Development Branch."
+    separator
+    message "Enter the following command:"
+    message "git checkout -b <new-branch-name>" true
+    separator
+    message "Select a unique name for the branch."
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  13 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Well done!!! You have completed Exercise 2." 
+    message "When you are ready to start the next exercise type 'next'."
+    end_dialog
+    ;;
+  14 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 3 - Steps 1 and 2" 
+    message "Learn About the Directory Structure of the Handbook Repository."
+    separator
+    message "Read the instructions in Exercise 3 - Steps 1 and 2"
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  15 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 3 - Step 3" 
+    message "Create a Directory for your Guides."
+    separator
+    message "Enter the following commands:"
+    message "cd /app/<your-personal-directory>/handbook-workshop/Guides" true
+    message "mkdir 'Guides by <unique-name>'" true
+    message "cd 'Guides by <unique-name>'" true
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  16 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 3 - Step 4" 
+    message "Create Simple Guides."
+    separator
+    message "Create new guides or copy and modify existing guides."
+    separator
+    message "When done, commit the changes using:"
+    message "git add . --all" true
+    message "git commit -m '<commit-message>'" true
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  17 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 3 - Step 5" 
+    message "Create a Directory for your Topic."
+    separator
+    message "Enter the following commands:"
+    message "cd '/app/<your-personal-directory>/handbook-workshop/Topics'" true
+    message "mkdir 'Topic by <unique-name>'" true
+    message "cd 'Topic by <unique-name>'" true
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  18 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 3 - Step 6" 
+    message "Create Simple Topic."
+    separator
+    message "Create a new topic or copy and modify and existing topic."
+    separator
+    message "When done, commit the changes using:"
+    message "git add . --all" true
+    message "git commit -m '<commit-message>'" true
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  19 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 3 - Step 7" 
+    message "Embed Links in the Guides."
+    separator
+    message "Read the instructions in Exercise 3 - Step 7"
+    separator
+    message "When done, commit the changes using:"
+    message "git add . --all" true
+    message "git commit -m '<commit-message>'" true
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  20 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Well done!!! You have completed Exercise 3." 
+    message "When you are ready to start the next exercise type 'next'."
+    end_dialog
+    ;;
+  21 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 4 - Step 1" 
+    message "Learn How to Configure the Handbook."
+    separator
+    message "Read the instructions in Exercise 4 - Step 1"
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  22 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 4 - Step 2" 
+    message "Create Metadata for the New Subject."
+    separator
+    message "Read the instructions in Exercise 4 - Step 2"
+    separator
+    message "When done, commit the changes using:"
+    message "git add . --all" true
+    message "git commit -m '<commit-message>'" true
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  23 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 4 - Step 3" 
+    message "Modify the Navigation Tree to include a Node for the New Subject."
+    separator
+    message "Read the instructions in Exercise 4 - Step 3"
+    separator
+    message "When done, commit the changes using:"
+    message "git add . --all" true
+    message "git commit -m '<commit-message>'" true
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  24 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 4 - Step 4" 
+    message "Build the Handbook."
+    separator
+    message "Enter the following commands:"
+    message "cd /app/<your-personal-directory>/handbook-workshop" true
+    message "handbook build -f" true
+    separator
+    message "When done, commit the changes using:"
+    message "git add . --all" true
+    message "git commit -m '<commit-message>'" true
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  25 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Well done!!! You have completed Exercise 4." 
+    message "When you are ready to start the next exercise type 'next'."
+    end_dialog
+    ;;
+  26 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 5 - Step 1" 
+    message "Verify that all Changes are Committed."
+    separator
+    message "Enter the following command:"
+    message "git status" true
+    separator
+    message "If needed, commit the changes using:"
+    message "git add . --all" true
+    message "git commit -m '<commit-message>'" true
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  27 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 5 - Step 2" 
+    message "Push the Changes to GitHub."
+    separator
+    message "Enter the following command:"
+    message "git push --set-upstream origin <dev-branch-name>" true
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  28 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 5 - Steps 3 to 8" 
+    message "Create Pull Request, review changes, merge, etc."
+    separator
+    message "Read the instructions in Exercise 5 - Steps 3 to 8"
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  29 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Well done!!! You have completed Exercise 5." 
+    message "When you are ready to start the next exercise type 'next'."
+    end_dialog
+    ;;
+  30 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 6 - Step 1" 
+    message "Verify that all Changes are Committed."
+    separator
+    message "Enter the following command:"
+    message "git status" true
+    separator
+    message "If there are changes that were not committed, then"
+    message "Repeat all steps of the Exercise 5."
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  31 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Exercise 6 - Step 2" 
+    message "Clean Up the Local Repository"
+    separator
+    message "Enter the folloiwng commands:"
+    message "git checkout master" true
+    message "git pull --prune" true
+    message "git branch -d <dev-branch-name>" true
+    separator
+    message "When done type 'next'."
+    end_dialog
+    ;;
+  32 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Well done!!! You have completed Exercise 6." 
+    message "Type 'next'."
+    end_dialog
+    ;;
+  33 )
+    echo $(($step+1)) > $STEPFILE
+    start_dialog
+    caption "Congratulations!!! You have completed all the exercises." 
+    message "Now you know how to contribute to the Handbook."
+    separator
+    message "Your contributions are welcome!" true
+    separator
+    message "Type 'next'."
+    end_dialog
+    ;;
+  * ) 
+    start_dialog
+    message "All done." true
+    end_dialog
+    ;;
+esac
