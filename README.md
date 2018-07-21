@@ -25,16 +25,30 @@ $ now
 
 On a successful build, you will get back a URL that can be used with a browser.
 
-### Deploying Locally
+### Deploying Locally with GoTTY Service
 
 To deploy the Dockerfile locally, run the following commands from the location of the Dockerfile:
 
 ```bash
-$ docker build -t gotty-image .
-$ docker run -p3000:3000 -it --rm gotty-image
+$ docker build -t handbook/gotty .
+$ docker run -it --rm -v$PWD/files/home:/root -p3000:3000 handbook/gotty
 ```
 
 Then use the browser to visit: `http://localhost:3000/`
+
+Note: The above `docker run` command adds volume mapping to ease local development. 
+Changing files in the files/home directory will be seen immediately in the local docker container.
+
+### Deploying Locally as Console
+
+To bypass GoTTY and run bash on the container directly, use the following command:
+
+```bash
+$ docker run -it --rm --entrypoint bash handbook/gotty
+```
+
+This override the entry point definition in the Dockerfile.
+
 
 ## Notes on GoTTY
 

@@ -10,17 +10,13 @@ case $step in
   0 ) 
     echo $(($step+1)) > $STEPFILE
     start_dialog
-    caption "Welcome to the Handbook Workshop."
-    message "You have three options for performing the hands-on session:"
-    message "  1. Use a guided session with the 'next'/'prev' commands."
-    message "  2. Continue using the instructions in the Exercises."
-    message "  3. Combine the above two options."
-    separator
-    message "With the guided session, perform the given instructions, and then:"
-    message "Type 'next' to continue." true
-    message "You can always type 'prev' to go back."
+    caption "Welcome to the Software Engineering Handbook Workshop."
+    message "The workshop hands-on session is guided interactively using"
+    message "the 'next'/'prev' commands."
+    message "Keep the Exercises open in parallel for an in-depth reference."
     separator
     message "When ready to start type 'next'."
+    message "You can always type 'prev' to go back."
     end_dialog
     ;;
   1 ) 
@@ -40,11 +36,11 @@ case $step in
     caption "Exercise 1 - Step 2" 
     message "Enter the Passphrase of the private SSH key."
     separator
-    message "If skipped earlier, enter the following command, otherwise ignore it:"
+    message "If skipped earlier, enter the following command, and"
+    message "follow the instructions, otherwise ignore it:"
     message
     message "ssh-add" true
     message
-    message "and follow the instructions."
     separator
     message "When done type 'next'."
     end_dialog
