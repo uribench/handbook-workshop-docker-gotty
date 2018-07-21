@@ -41,7 +41,9 @@ case $step in
     message "Enter the Passphrase of the private SSH key."
     separator
     message "If skipped earlier, enter the following command, otherwise ignore it:"
+    message
     message "ssh-add" true
+    message
     message "and follow the instructions."
     separator
     message "When done type 'next'."
@@ -54,8 +56,10 @@ case $step in
     message "Create a Personal Working Directory."
     separator
     message "Enter the following commands:"
+    message
     message "mkdir <unique-directory-name>" true
     message "cd <unique-directory-name>" true
+    message
     separator
     message "Replace the <unique-directory-name> with your name, for instance."
     separator
@@ -69,9 +73,13 @@ case $step in
     message "Select a Text Editor."
     separator
     message "Enter one of the following two commands:"
+    message
     message "nano test.md" true
+    message
     message "or"
+    message
     message "vi test.md" true
+    message
     separator
     message "Experiment with simple editing tasks, save the file, and exit the editor."
     separator
@@ -85,7 +93,9 @@ case $step in
     message "Experiment with an In-browser Markdown Editor."
     separator
     message "Use Chrome to visit the following URL:"
+    message
     message "https://stackedit.io/" true
+    message
     separator
     message "Edit some Markdown content in StackEdit, when ready:"
     message "Copy the content from StackEdit into test.md using your preferred editor."
@@ -107,7 +117,9 @@ case $step in
     message "Verify Prerequisites."
     separator
     message "Enter the following command:"
+    message
     message "pwd" true
+    message
     separator
     message "The working directory should be what you chose for <unique-directory-name>."
     separator
@@ -121,11 +133,15 @@ case $step in
     message "Visit the handbook-workshop Repository on GitHub."
     separator
     message "Use Chrome to visit the following URL:"
+    message
     message "https://github.com/uribench/handbook-workshop" true
+    message
     separator
     message "Use the following credentials:"
+    message
     message "  Username: handbookworkshop"
     message "  Password: (will be provided in the workshop)"
+    message
     separator
     message "When done type 'next'."
     end_dialog
@@ -152,7 +168,9 @@ case $step in
     message "Clone the handbook-workshop Repository."
     separator
     message "Enter the following command:"
+    message
     message "git clone git@github.com:uribench/handbook-workshop.git" true
+    message
     separator
     message "When done type 'next'."
     end_dialog
@@ -164,7 +182,9 @@ case $step in
     message "Enter the Directory of the Cloned Repository."
     separator
     message "Enter the following command:"
+    message
     message "cd handbook-workshop" true
+    message
     separator
     message "When done type 'next'."
     end_dialog
@@ -176,7 +196,9 @@ case $step in
     message "Create a Development Branch."
     separator
     message "Enter the following command:"
+    message
     message "git checkout -b <new-branch-name>" true
+    message
     separator
     message "Select a unique name for the branch."
     separator
@@ -208,9 +230,11 @@ case $step in
     message "Create a Directory for your Guides."
     separator
     message "Enter the following commands:"
+    message
     message "cd /app/<your-personal-directory>/handbook-workshop/Guides" true
     message "mkdir 'Guides by <unique-name>'" true
     message "cd 'Guides by <unique-name>'" true
+    message
     separator
     message "When done type 'next'."
     end_dialog
@@ -224,8 +248,10 @@ case $step in
     message "Create new guides or copy and modify existing guides."
     separator
     message "When done, commit the changes using:"
+    message
     message "git add . --all" true
     message "git commit -m '<commit-message>'" true
+    message
     separator
     message "When done type 'next'."
     end_dialog
@@ -237,9 +263,11 @@ case $step in
     message "Create a Directory for your Topic."
     separator
     message "Enter the following commands:"
+    message
     message "cd '/app/<your-personal-directory>/handbook-workshop/Topics'" true
     message "mkdir 'Topic by <unique-name>'" true
     message "cd 'Topic by <unique-name>'" true
+    message
     separator
     message "When done type 'next'."
     end_dialog
@@ -253,8 +281,10 @@ case $step in
     message "Create a new topic or copy and modify and existing topic."
     separator
     message "When done, commit the changes using:"
+    message
     message "git add . --all" true
     message "git commit -m '<commit-message>'" true
+    message
     separator
     message "When done type 'next'."
     end_dialog
@@ -268,8 +298,10 @@ case $step in
     message "Read the instructions in Exercise 3 - Step 7"
     separator
     message "When done, commit the changes using:"
+    message
     message "git add . --all" true
     message "git commit -m '<commit-message>'" true
+    message
     separator
     message "When done type 'next'."
     end_dialog
@@ -301,8 +333,10 @@ case $step in
     message "Read the instructions in Exercise 4 - Step 2"
     separator
     message "When done, commit the changes using:"
+    message
     message "git add . --all" true
     message "git commit -m '<commit-message>'" true
+    message
     separator
     message "When done type 'next'."
     end_dialog
@@ -316,8 +350,10 @@ case $step in
     message "Read the instructions in Exercise 4 - Step 3"
     separator
     message "When done, commit the changes using:"
+    message
     message "git add . --all" true
     message "git commit -m '<commit-message>'" true
+    message
     separator
     message "When done type 'next'."
     end_dialog
@@ -329,12 +365,16 @@ case $step in
     message "Build the Handbook."
     separator
     message "Enter the following commands:"
+    message
     message "cd /app/<your-personal-directory>/handbook-workshop" true
     message "handbook build -f" true
+    message
     separator
     message "When done, commit the changes using:"
+    message
     message "git add . --all" true
     message "git commit -m '<commit-message>'" true
+    message
     separator
     message "When done type 'next'."
     end_dialog
@@ -353,11 +393,15 @@ case $step in
     message "Verify that all Changes are Committed."
     separator
     message "Enter the following command:"
+    message
     message "git status" true
+    message
     separator
     message "If needed, commit the changes using:"
+    message
     message "git add . --all" true
     message "git commit -m '<commit-message>'" true
+    message
     separator
     message "When done type 'next'."
     end_dialog
@@ -369,7 +413,9 @@ case $step in
     message "Push the Changes to GitHub."
     separator
     message "Enter the following command:"
+    message
     message "git push --set-upstream origin <dev-branch-name>" true
+    message
     separator
     message "When done type 'next'."
     end_dialog
@@ -399,7 +445,9 @@ case $step in
     message "Verify that all Changes are Committed."
     separator
     message "Enter the following command:"
+    message
     message "git status" true
+    message
     separator
     message "If there are changes that were not committed, then"
     message "Repeat all steps of the Exercise 5."
@@ -414,9 +462,11 @@ case $step in
     message "Clean Up the Local Repository"
     separator
     message "Enter the folloiwng commands:"
+    message
     message "git checkout master" true
     message "git pull --prune" true
     message "git branch -d <dev-branch-name>" true
+    message
     separator
     message "When done type 'next'."
     end_dialog
